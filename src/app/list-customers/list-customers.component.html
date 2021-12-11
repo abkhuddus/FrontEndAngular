@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">Customer Details</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Customer-ID</th>            
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Adress</th>
+            <th scope="col">AcountType</th>
+            <th scope="col">Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of customerList">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.age}}</td>
+            <td>{{c.adress}}</td>
+            <td>{{c.accountType}}</td>   
+            <td><button (click)="deleteCustomers(c.id)" style='margin-right:16px' (click)="deleteCustomer(c.id)" class="btn btn-danger">Delete</button>
+                <button (click)="updateCustomer(c.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+                <button (click)="CustomerDetails(c.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+            
+            
+            </td>
+       </tr>
+    </tbody>
+</table>
